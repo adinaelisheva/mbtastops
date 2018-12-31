@@ -1,0 +1,493 @@
+const lines = ["red", "orange", "green", "blue"]
+
+const stops = [
+  {
+    lines: ["blue"],
+    name: "Wonderland"
+  },
+  {
+    lines: ["blue"],
+    name: "Revere Beach"
+  },
+  {
+    lines: ["blue"],
+    name: "Beachmont"
+  },
+  {
+    lines: ["blue"],
+    name: "Suffolk Downs"
+  },
+  {
+    lines: ["blue"],
+    name: "Orient Heights"
+  },
+  {
+    lines: ["blue"],
+    name: "Wood Island"
+  },
+  {
+    lines: ["blue"],
+    name: "Airport"
+  },
+  {
+    lines: ["blue"],
+    name: "Maverick"
+  },
+  {
+    lines: ["blue"],
+    name: "Aquarium"
+  },
+  {
+    lines: ["orange", "blue"],
+    name: "State"
+  },
+  {
+    lines: ["blue", "green"],
+    name: "Government Center"
+  },
+  {
+    lines: ["blue"],
+    name: "Bowdoin"
+  },
+  {
+    lines: ["orange"],
+    name: "Oak Grove"
+  },
+  {
+    lines: ["orange"],
+    name: "Malden Center"
+  },
+  {
+    lines: ["orange"],
+    name: "Wellington"
+  },
+  {
+    lines: ["orange"],
+    name: "Assembly"
+  },
+  {
+    lines: ["orange"],
+    name: "Sullivan Square"
+  },
+  {
+    lines: ["orange"],
+    name: "Community College"
+  },
+  {
+    lines: ["green", "orange"],
+    name: "North Station"
+  },
+  {
+    lines: ["orange", "green"],
+    name: "Haymarket"
+  },
+  {
+    lines: ["orange", "red"],
+    name: "Downtown Crossing"
+  },
+  {
+    lines: ["orange"],
+    name: "Chinatown"
+  },
+  {
+    lines: ["orange"],
+    name: "Tufts Medical Center"
+  },
+  {
+    lines: ["orange"],
+    name: "Back Bay"
+  },
+  {
+    lines: ["orange"],
+    name: "Massachusetts Avenue"
+  },
+  {
+    lines: ["orange"],
+    name: "Ruggles"
+  },
+  {
+    lines: ["orange"],
+    name: "Roxbury Crossing"
+  },
+  {
+    lines: ["orange"],
+    name: "Jackson Square"
+  },
+  {
+    lines: ["orange"],
+    name: "Stony Brook"
+  },
+  {
+    lines: ["orange"],
+    name: "Green Street"
+  },
+  {
+    lines: ["orange"],
+    name: "Forest Hills"
+  },
+  {
+    lines: ["red"],
+    name: "Alewife"
+  },
+  {
+    lines: ["red"],
+    name: "Davis"
+  },
+  {
+    lines: ["red"],
+    name: "Porter"
+  },
+  {
+    lines: ["red"],
+    name: "Harvard"
+  },
+  {
+    lines: ["red"],
+    name: "Central"
+  },
+  {
+    lines: ["red"],
+    name: "Kendall/MIT"
+  },
+  {
+    lines: ["red"],
+    name: "Charles/MGH"
+  },
+  {
+    lines: ["red", "green"],
+    name: "Park Street"
+  },
+  {
+    lines: ["red"],
+    name: "South Station"
+  },
+  {
+    lines: ["red"],
+    name: "Broadway"
+  },
+  {
+    lines: ["red"],
+    name: "Andrew"
+  },
+  {
+    lines: ["red"],
+    name: "JFK/UMass"
+  },
+  {
+    lines: ["red"],
+    name: "North Quincy"
+  },
+  {
+    lines: ["red"],
+    name: "Wollaston",
+    closed: true
+  },
+  {
+    lines: ["red"],
+    name: "Quincy Center"
+  },
+  {
+    lines: ["red"],
+    name: "Quincy Adams"
+  },
+  {
+    lines: ["red"],
+    name: "Braintree"
+  },
+  {
+    lines: ["red"],
+    name: "Savin Hill"
+  },
+  {
+    lines: ["red"],
+    name: "Fields Corner"
+  },
+  {
+    lines: ["red"],
+    name: "Shawmut"
+  },
+  {
+    lines: ["red"],
+    name: "Ashmont"
+  },
+  {
+    lines: ["mattapan"],
+    name: "Ashmont"
+  },
+  {
+    lines: ["mattapan"],
+    name: "Cedar Grove"
+  },
+  {
+    lines: ["mattapan"],
+    name: "Butler"
+  },
+  {
+    lines: ["mattapan"],
+    name: "Milton"
+  },
+  {
+    lines: ["mattapan"],
+    name: "Central Avenue"
+  },
+  {
+    lines: ["mattapan"],
+    name: "Valley Road"
+  },
+  {
+    lines: ["mattapan"],
+    name: "Capen Street"
+  },
+  {
+    lines: ["mattapan"],
+    name: "Mattapan"
+  },
+  {
+    lines: ["green"],
+    name: "Boston College"
+  },
+  {
+    lines: ["green"],
+    name: "South Street"
+  },
+  {
+    lines: ["green"],
+    name: "Chestnut Hill Avenue"
+  },
+  {
+    lines: ["green"],
+    name: "Chiswick Road"
+  },
+  {
+    lines: ["green"],
+    name: "Sutherland Road"
+  },
+  {
+    lines: ["green"],
+    name: "Washington Street"
+  },
+  {
+    lines: ["green"],
+    name: "Warren Street"
+  },
+  {
+    lines: ["green"],
+    name: "Allston Street"
+  },
+  {
+    lines: ["green"],
+    name: "Griggs Street"
+  },
+  {
+    lines: ["green"],
+    name: "Harvard Avenue"
+  },
+  {
+    lines: ["green"],
+    name: "Packards Corner"
+  },
+  {
+    lines: ["green"],
+    name: "Babcock Street"
+  },
+  {
+    lines: ["green"],
+    name: "Pleasant Street"
+  },
+  {
+    lines: ["green"],
+    name: "Saint Paul Street"
+  },
+  {
+    lines: ["green"],
+    name: "BU West"
+  },
+  {
+    lines: ["green"],
+    name: "BU Central"
+  },
+  {
+    lines: ["green"],
+    name: "BU East"
+  },
+  {
+    lines: ["green"],
+    name: "Blandford Street"
+  },
+  {
+    lines: ["green"],
+    name: "Cleveland Circle"
+  },
+  {
+    lines: ["green"],
+    name: "Englewood Avenue"
+  },
+  {
+    lines: ["green"],
+    name: "Dean Road"
+  },
+  {
+    lines: ["green"],
+    name: "Tappan Street"
+  },
+  {
+    lines: ["green"],
+    name: "Washington Square"
+  },
+  {
+    lines: ["green"],
+    name: "Fairbanks Street"
+  },
+  {
+    lines: ["green"],
+    name: "Brandon Hall"
+  },
+  {
+    lines: ["green"],
+    name: "Summit Avenue"
+  },
+  {
+    lines: ["green"],
+    name: "Coolidge Corner"
+  },
+  {
+    lines: ["green"],
+    name: "Saint Paul Street"
+  },
+  {
+    lines: ["green"],
+    name: "Kent Street"
+  },
+  {
+    lines: ["green"],
+    name: "Hawes Street"
+  },
+  {
+    lines: ["green"],
+    name: "Saint Marys Street"
+  },
+  {
+    lines: ["green"],
+    name: "Riverside"
+  },
+  {
+    lines: ["green"],
+    name: "Woodland"
+  },
+  {
+    lines: ["green"],
+    name: "Waban"
+  },
+  {
+    lines: ["green"],
+    name: "Eliot"
+  },
+  {
+    lines: ["green"],
+    name: "Newton Highlands"
+  },
+  {
+    lines: ["green"],
+    name: "Newton Centre"
+  },
+  {
+    lines: ["green"],
+    name: "Chestnut Hill"
+  },
+  {
+    lines: ["green"],
+    name: "Reservoir"
+  },
+  {
+    lines: ["green"],
+    name: "Beaconsfield"
+  },
+  {
+    lines: ["green"],
+    name: "Brookline Hills"
+  },
+  {
+    lines: ["green"],
+    name: "Brookline Village"
+  },
+  {
+    lines: ["green"],
+    name: "Longwood"
+  },
+  {
+    lines: ["green"],
+    name: "Fenway"
+  },
+  {
+    lines: ["green"],
+    name: "Kenmore"
+  },
+  {
+    lines: ["green"],
+    name: "Hynes Convention Center"
+  },
+  {
+    lines: ["green"],
+    name: "Heath Street"
+  },
+  {
+    lines: ["green"],
+    name: "Back of the Hill"
+  },
+  {
+    lines: ["green"],
+    name: "Riverway"
+  },
+  {
+    lines: ["green"],
+    name: "Mission Park"
+  },
+  {
+    lines: ["green"],
+    name: "Fenwood Road"
+  },
+  {
+    lines: ["green"],
+    name: "Brigham Circle"
+  },
+  {
+    lines: ["green"],
+    name: "Longwood Medical Area"
+  },
+  {
+    lines: ["green"],
+    name: "Museum of Fine Arts"
+  },
+  {
+    lines: ["green"],
+    name: "Northeastern University"
+  },
+  {
+    lines: ["green"],
+    name: "Symphony"
+  },
+  {
+    lines: ["green"],
+    name: "Prudential"
+  },
+  {
+    lines: ["green"],
+    name: "Copley"
+  },
+  {
+    lines: ["green"],
+    name: "Arlington"
+  },
+  {
+    lines: ["green"],
+    name: "Boylston"
+  },
+  {
+    lines: ["green"],
+    name: "Science Park"
+  },
+  {
+    lines: ["green"],
+    name: "Lechmere"
+  }
+];
